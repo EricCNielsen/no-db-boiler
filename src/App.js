@@ -23,7 +23,9 @@ class App extends Component {
     this.createSillymon=this.createSillymon.bind(this)
   }
 
+  getSillymons = () => {
 
+  }
 
   handleName(val) {
     this.setState({
@@ -66,11 +68,12 @@ class App extends Component {
         <Compiled
           key={sillymon.id}
           sillymon={sillymon}
+          getSillymons={this.getSillymons}
         />
       )
     })
     return (
-      <div>
+      <div className="App">
         <h1>Sillymón Generator</h1>
         <Created 
           name={this.state.name} 
@@ -84,10 +87,12 @@ class App extends Component {
           createSillymon={this.createSillymon}
         />
         {/* body here */}
-        <h1>Let's see what you created!</h1>
+        
         {/* input info goes here */}
-        {mappedMons}
+        
 
+        <h1>Check Out all the others!</h1>
+        {mappedMons}
       
       </div>
     );
