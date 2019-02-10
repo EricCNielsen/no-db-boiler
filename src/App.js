@@ -21,6 +21,7 @@ class App extends Component {
     this.handleColor=this.handleColor.bind(this)
     this.handleFaveFood=this.handleFaveFood.bind(this)
     this.createSillymon=this.createSillymon.bind(this)
+    this.deleteSillymon=this.deleteSillymon.bind(this)
   }
 
   getSillymons = () => {
@@ -58,6 +59,13 @@ class App extends Component {
       })
     })
   }
+  deleteSillymon(id) {
+    axios.delete(`/api/sillymon/${id}`).then(res => {
+      this.setState({
+        sillymons: res.data
+      })
+    })
+  }
 
 
   render() {
@@ -69,6 +77,7 @@ class App extends Component {
           key={sillymon.id}
           sillymon={sillymon}
           getSillymons={this.getSillymons}
+          deleteSillymon={this.deleteSillymon}
         />
       )
     })

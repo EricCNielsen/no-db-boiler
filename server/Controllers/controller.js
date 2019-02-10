@@ -20,5 +20,13 @@ module.exports = {
     id++;
     res.status(200).send(sillymons)
   },
-  
+  deleteSillymon: (req, res) => {
+    const {id} = req.params;
+
+    const index = sillymons.findIndex(sillymon => sillymon.id == id);
+
+    sillymons.splice (index, 1)
+    res.status(200).send(sillymons)
+  }
+
 }

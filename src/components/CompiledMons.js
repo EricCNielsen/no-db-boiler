@@ -10,13 +10,8 @@ class Compiled extends Component {
 
     }
 
-    deleteSillymon = () => {
-        //do axios stuff
-        this.props.getSillymons()
-    }
-
     render() {
-        const {sillymon} = this.props
+        const {sillymon, deleteSillymon} = this.props
         return (
             <div>
                 <h3>{sillymon.name}</h3>
@@ -24,7 +19,7 @@ class Compiled extends Component {
                 <p>Color: {sillymon.color}</p>
                 <p>Favorite Food: {sillymon.faveFood}</p>
                 <button>Edit</button>
-                <button>Delete</button>
+                <button onClick={() => deleteSillymon(sillymon.id)}>Delete</button>
             </div>
         )
     }
