@@ -93,7 +93,7 @@ class App extends Component {
         })
     })
   }
-  
+
 
 
   render() {
@@ -113,7 +113,7 @@ class App extends Component {
     })
     return (
       <div className="App">
-        <h1>Sillymón Generator</h1>
+        <h1 className="generatorBG">Sillymón Generator</h1>
         <Created 
           name={this.state.name} 
           type={this.state.type} 
@@ -129,9 +129,12 @@ class App extends Component {
         
         {/* input info goes here */}
         
+        <h1 className="generatorBG">Check Out all the others!</h1>
+        <div className="compiledBG">
 
-        <h1>Check Out all the others!</h1>
-        {mappedMons}
+          {mappedMons}
+        
+        </div>
       
       </div>
     );

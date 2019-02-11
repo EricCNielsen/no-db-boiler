@@ -4,3 +4,27 @@
     align-items: center;
     flex-direction: column;
 }
+
+body {
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/2b42abdd-74dd-49ea-90c6-c35c6f282f81/dahy4d9-fe69f5b8-d4e5-4553-90db-a7abb7333b73.jpg/v1/fill/w_317,h_250,q_70,strp/twinsies_by_warrior_kitty_375_dahy4d9-250t.jpg");
+    font-family: 'Russo One', sans-serif;
+}
+
+.generatorBG {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding:10px 20px;
+    
+
+}
+
+.compiledBG {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    
+}

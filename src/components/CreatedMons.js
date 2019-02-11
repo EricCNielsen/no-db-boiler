@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 
         let {name, type, color, faveFood} = props
     return (
-        <div>
+        <div className="generatorBG">
         <input type="text" placeholder="Name" onChange={e => props.handleName(e.target.value)} value={name} />
         <input type="text" placeholder="Type" onChange={e => props.handleType(e.target.value)} value={type}/>
         <input type="text" placeholder="Color" onChange={e => props.handleColor(e.target.value)} value={color}/>

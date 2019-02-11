@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Sillyblocks.css';
 
 class Compiled extends Component {
     constructor (props) {
@@ -30,7 +31,7 @@ class Compiled extends Component {
     render() {
         const {sillymon, deleteSillymon} = this.props
         return (
-            <div>
+            <div class="blocks">
                 <h3>{sillymon.name}</h3>
                 <p>Type: {sillymon.type}</p>
                 <p>Color: {sillymon.color}</p>
