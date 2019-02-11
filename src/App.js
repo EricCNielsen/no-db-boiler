@@ -22,10 +22,16 @@ class App extends Component {
     this.handleFaveFood=this.handleFaveFood.bind(this)
     this.createSillymon=this.createSillymon.bind(this)
     this.deleteSillymon=this.deleteSillymon.bind(this)
+    this.updateMon=this.updateMon.bind(this)
+    this.setEdit=this.setEdit.bind(this)
   }
 
-  getSillymons = () => {
-
+  componentDidMount() {
+    axios.get('api/sillymons').then(res => {
+      this.setState({
+        sillymons: res.data
+      })
+    })
   }
 
   handleName(val) {
@@ -66,6 +72,27 @@ class App extends Component {
       })
     })
   }
+  setEdit(name, type, color, faveFood) {
+    this.setState({
+      name,
+      type,
+      color,
+      faveFood
+    })
+  }
+  updateMon(id) {
+    const {name, type, color, faveFood} = this.state
+    axios.put(`/api/sillymon/${id}`, {name, type, color, faveFood}).then(res => {
+        this.setState({
+          sillymons: res.data,
+          name: '',
+          type: '',
+          color: '',
+          faveFood: ''
+
+        })
+    })
+  }
 
 
   render() {
@@ -78,6 +105,8 @@ class App extends Component {
           sillymon={sillymon}
           getSillymons={this.getSillymons}
           deleteSillymon={this.deleteSillymon}
+          updateMon={this.updateMon}
+          setEdit={this.setEdit}
         />
       )
     })

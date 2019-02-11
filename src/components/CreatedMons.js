@@ -13,10 +13,10 @@ class Created extends Component {
         let {name, type, color, faveFood} = this.props
     return (
         <div>
-        <input type="text" placeholder="Name" onChange={e => this.props.handleName(e.target.value)} />
-        <input type="text" placeholder="Type" onChange={e => this.props.handleType(e.target.value)} />
-        <input type="text" placeholder="Color" onChange={e => this.props.handleColor(e.target.value)} />
-        <input type="text" placeholder="Favorite Food" onChange={e => this.props.handleFaveFood(e.target.value)} />
+        <input type="text" placeholder="Name" onChange={e => this.props.handleName(e.target.value)} value={name} />
+        <input type="text" placeholder="Type" onChange={e => this.props.handleType(e.target.value)} value={type}/>
+        <input type="text" placeholder="Color" onChange={e => this.props.handleColor(e.target.value)} value={color}/>
+        <input type="text" placeholder="Favorite Food" onChange={e => this.props.handleFaveFood(e.target.value)} value={faveFood}/>
         <button onClick={() => this.props.createSillymon(name, type, color, faveFood)}>Create</button>
         <h1 style={{textAlign:"center"}}>Let's see what you created!</h1>
         <h3>{this.props.name}</h3>

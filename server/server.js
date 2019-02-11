@@ -11,7 +11,9 @@ app.post(`/api/sillymon`, ctrl.createSillymon);
 
 app.delete(`/api/sillymon/:id`, ctrl.deleteSillymon);
 
-// USE A DIFFERENT PORT IF YOU WANT
+app.put(`/api/sillymon/:id`, ctrl.editSillymon);
+
+
 const PORT = 3001
-// CHANGE THE CONSOLE LOG IF YOU WANT
+
 app.listen(PORT, () => console.log(`The magic is happening on ${PORT}`))
